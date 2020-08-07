@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 $scope.date = new Date().toISOString();
 $scope.cesta = {};
 $scope.total = 0;
-$scope.presupuesto = 100;
+$scope.presupuesto = 100.0;
 
 const generosDisponibles = ["Acción", "Aventura", "Drama", "Cyberpunk", "Ciencia Ficción", "Western"]
 

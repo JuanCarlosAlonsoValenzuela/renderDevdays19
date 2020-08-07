@@ -1,57 +1,123 @@
+<head>
+</head>
 <style>
+    .form-check{
+        display: inline;
+    }
+
+    .form-check-label{
+        padding-right: 50px;
+        padding-top: 15px;
+    }
 </style>
 
-<h1>Catálogo de películas</h1>
-<h2>Presupuesto: {{presupuesto}}</h2>
+<nav class="navbar navbar-default">
+    <div class="navbar-header display-1">
+        <a class="navbar-brand">
+            Catálogo de películas
+        </a>
+    </div>
 
-<form ng-submit="crearPelicula()">
-<!-- div class="form-group" (quitar br) -->
-    <label for="titulo">Título: </label>
-    <input type="text" id="titulo" required ng-model="Titulo"> <br>
-
-    <label for="sinopsis">Sinopsis: </label>
-    <textarea id="sinopsis" required ng-model="Sinopsis" rows="4" cols="50"></textarea> <br>
-
-    <label for="fechaEstreno">Estreno: </label>
-    <input type="date" id="fechaEstreno" required ng-model="FechaEstreno"> <br>
-    
-    <label for="precio">Precio: </label>
-    <input type="number" id="precio" min="0" step="0.01" required ng-model="Precio"> <br>
-
-    <label for="unidades">Unidades: </label>
-    <input type="number" id="unidades" min="0" required ng-model="Unidades"> <br>
-
-    <label for="imagen">Imagen: </label>
-    <input type="url" id="imagen" required ng-model="Imagen"> <br>
-
-    <label for="generos">Géneros: </label><br>
-        <input type="checkbox" id="genero1" name="Generos" ng-model="Generos[0]" value="Accion">
-        <label for="genero1"> Acción</label><br>
-
-        <input type="checkbox" id="genero2" name="Generos" ng-model="Generos[1]" value="Aventura">
-        <label for="genero2"> Aventura</label><br>
-
-        <input type="checkbox" id="genero3" name="Generos" ng-model="Generos[2]" value="Drama">
-        <label for="genero3"> Drama</label><br>
+    <div class="navbar-right">
+        <form class="form-inline">
+            <div class="form-group">
+        <label for="presupuesto" class="navbar-brand">Presupuesto: </label>
+                <input class="form-control" id="presupuesto" type ="number" min="0" step="0.01" ng-model="presupuesto" oninput="validity.valid||(value='');">            
+            </div>
+        </form> 
         
-        <input type="checkbox" id="genero4" name="Generos" ng-model="Generos[3]" value="Cyberpunk">
-        <label for="genero4"> Cyberpunk</label><br>
+    </div>
+</nav>
 
-        <input type="checkbox" id="genero5" name="Generos" ng-model="Generos[4]" value="CienciaFiccion">
-        <label for="genero5"> Ciencia Ficción</label><br>
+<fieldset>
+    <legend><b>Crear película</b></legend>
+<form ng-submit="crearPelicula()">
+    <div class="form-group row">
+        <label for="titulo" class="col-sm-2 col-form-label">Título</label>
+        <div class="col-sm-10">
+            <input placeholder="Título" type="text" class="form-control" id="titulo" required ng-model="Titulo">
+        </div>
+    </div>
 
-        <input type="checkbox" id="genero6" name="Generos" ng-model="Generos[5]" value="Western">
-        <label for="genero6"> Western</label><br>
 
-    <button type="submit">Crear película</button>
+    <div class="form-group row">
+        <label for="fechaEstreno" class="col-sm-2 col-form-label">Fecha de estreno</label>
+        <div class="col-sm-10">
+            <input placeholder="Fecha de Estreno" type="date" class="form-control" id="fechaEstreno" required ng-model="FechaEstreno">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="sinopsis" class="col-sm-2 col-form-label">Sinopsis: </label>
+        <div class="col-sm-10">
+            <textarea id="sinopsis" placeholder="Sinopsis" class="form-control" required ng-model="Sinopsis" rows="4" cols="50"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="precio" class="col-sm-2 col-form-label">Precio: </label>
+        <div class="col-sm-10">
+            <input type="number" id="precio" class="form-control" placeholder="Precio (euros)" min="0" step="0.01" required ng-model="Precio">
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="unidades" class="col-sm-2 col-form-label">Unidades: </label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="unidades" placeholder="Unidades" min="0" required ng-model="Unidades"> 
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="imagen" class="col-sm-2 col-form-label">Imagen: </label>
+        <div class="col-sm-10">
+            <input type="url" id="imagen" class="form-control" placeholder="URL de la imagen" required ng-model="Imagen">
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="generos" class="col-sm-2 col-form-label" style="padding-top: 15px;">Géneros: </label>
+            <div class="col-sm-10">
+                
+                    <input type="checkbox" class="form-check-input" id="genero1" name="Generos" ng-model="Generos[0]" value="Accion">
+                    <label class="form-check-label" for="genero1"> Acción</label>
+               
+                    <input type="checkbox" id="genero2" class="form-check-input" name="Generos" ng-model="Generos[1]" value="Aventura">
+                    <label class="form-check-label" for="genero2"> Aventura</label>
+                
+                    <input type="checkbox" id="genero3" name="Generos" ng-model="Generos[2]" value="Drama">
+                    <label class="form-check-label" for="genero3"> Drama</label>
+            </div>
+            <br>
+
+            <p class="col-sm-2 col-form-label"></p>
+            <div class="col-sm-10">
+
+                <input type="checkbox" class="form-check-input" id="genero4" name="Generos" ng-model="Generos[3]" value="Cyberpunk">
+                <label class="form-check-label" for="genero4"> Cyberpunk</label>
+
+                <input type="checkbox" class="form-check-input" id="genero5" name="Generos" ng-model="Generos[4]" value="CienciaFiccion">
+                <label class="form-check-label" for="genero5"> Ciencia Ficción</label>
+
+                <input type="checkbox" class="form-check-input" id="genero6" name="Generos" ng-model="Generos[5]" value="Western">
+                <label class="form-check-label" for="genero6"> Western</label>
+            </div>
+            <br>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Crear película</button><br>
 </form>
+</fieldset>
+
+
+
 
 <div ng-repeat="pelicula in model.peliculas">
     <fieldset>
         <legend>{{pelicula.titulo}}</legend>
         <img src="{{pelicula.imagen}}" width="200px">
         <p><b>Precio:</b> {{pelicula.precio}}€</p>
-        <p><b>Unidades:</b> {{pelicula.unidades}}   <button ng-click="incrementar(pelicula)">+</button>  <button ng-disabled="pelicula.unidades==0" ng-click="decrementar(pelicula)">-</button>        </p>
+        <p><b>Unidades:</b> {{pelicula.unidades}}   <button class="btn btn-success" ng-click="incrementar(pelicula)"><span class="glyphicon glyphicon-plus"></span></button>  <button class="btn btn-danger" ng-disabled="pelicula.unidades==0" ng-click="decrementar(pelicula)"><span class="glyphicon glyphicon-minus"></span></button>        </p>
         <p><b>Fecha de estreno:</b> {{pelicula.fechaEstreno | date:'dd-MMM-yyyy'}}</p>
         <p><b>Géneros:</b></p>
             <ul ng-repeat="genero in pelicula.generos">
@@ -59,21 +125,21 @@
             </ul>
 
         <p><b>Sinopsis:</b> {{pelicula.sinopsis}}</p>
-        <button ng-click="addMovie(pelicula);" ng-disabled="pelicula.unidades==0">Añadir a la cesta</button> <button ng-click="eliminarPelicula(pelicula)">Eliminar</button>
+        <button class="btn btn-success" ng-click="addMovie(pelicula);" ng-disabled="pelicula.unidades==0">Añadir a la cesta</button> <button class="btn btn-danger" ng-click="eliminarPelicula(pelicula)">Eliminar</button>
     </fieldset>
 </div>
 
 <fieldset>
 
-    <legend><h2>Cesta</h2></legend>
+    <legend><b>Cesta</b></legend>
     <div ng-repeat="compra in cesta">
-        <h3 style="display: inline;">{{compra.titulo}} </h3> <button ng-click="borrarDeCesta(compra)">Borrar de la cesta</button>    
+        <h3 style="display: inline;">{{compra.titulo}} </h3> <button class="btn btn-danger" ng-click="borrarDeCesta(compra)">Borrar de la cesta</button>    
         <h4>{{compra.cantidad}} x {{compra.precio}}</h4>
     </div>
     <h3>Total: {{total}}€</h3>
     
-    <button ng-click="pagar()">Pagar</button>
-    <button ng-click="vaciarCesta()">Vaciar cesta</button>
-
+    <button class="btn btn-primary" ng-click="pagar()">Pagar</button>
+    <button class="btn btn-danger" ng-click="vaciarCesta()">Vaciar cesta</button>
 </fieldset>
+<br>
 
