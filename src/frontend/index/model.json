@@ -1,0 +1,31 @@
+{
+    "peliculas": {
+        "Blade Runner":{
+            "titulo": "Blade Runner",
+            "sinopsis": "En un futuro sombrío y lluvioso, un expolicía vuelve al servicio para buscar y destruir a un grupo de androides que fingen ser humanos para, integrados en la sociedad, encontrar a su creador y matarlo.",
+            "fechaEstreno": "1982-08-21",
+            "precio": 20,
+            "unidades": 5,
+            "imagen": "https://images-na.ssl-images-amazon.com/images/I/71L91MAG2xL._AC_SX522_.jpg",
+            "generos": ["Cyberpunk", "Ciencia Ficción", "Acción"]
+        },
+        "Sin Perdón":{
+            "titulo": "Sin Perdón",
+            "sinopsis": "Un viejo pistolero, su ex-compañero y un joven muy rápido para disparar, se dedican a cazar recompensas en una ciudad llamada Big Whiskey.",
+            "fechaEstreno": "1992-09-25",
+            "precio": 15,
+            "unidades": 1,
+            "imagen": "https://es.web.img2.acsta.net/pictures/15/10/23/15/45/106018.jpg",
+            "generos": ["Western", "Drama", "Acción"]
+        },
+        "La fuga de Alcatraz":{
+            "titulo": "La fuga de Alcatraz",
+            "sinopsis": "La fascinante historia de los tres únicos hombres que lograron escapar de la famosa prisión de máxima seguridad de Alcatraz en 1962.",
+            "fechaEstreno": "1979-06-22",
+            "precio": 10,
+            "unidades": 0,
+            "imagen": "https://www.ecartelera.com/carteles/5800/5851/001_m.jpg",
+            "generos": ["Drama"]
+        }
+    }
+}
