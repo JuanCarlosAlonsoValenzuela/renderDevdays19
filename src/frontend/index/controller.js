@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-// $scope.peliculas = $.getJSON("./model.json");
+
 $scope.date = new Date().toISOString();
 $scope.cesta = {};
 $scope.total = 0;
@@ -44,7 +44,6 @@ $scope.vaciarCesta = function(){
     let model2 = this.model;
     Object.keys($scope.cesta).forEach(function(key){
         // Añadir el stock
-        // this.model.peliculas[key].unidades += $scope.cesta[key].cantidad;
         model2.peliculas[key].unidades += $scope.cesta[key].cantidad;
     })
     $scope.cesta = {};
@@ -69,7 +68,7 @@ $scope.pagar = function(){
 
 $scope.crearPelicula = function(){
     
-    if(this.Generos == null){
+    if(this.Generos == null || this.Generos.length == 0){
         alert("Por favor, introduzca al menos un género");
     }else if($scope.FechaEstreno > new Date()){
         alert("La fecha de estreno debe ser anterior a la actual");
@@ -93,6 +92,7 @@ $scope.crearPelicula = function(){
             "generos": listaGeneros
         }
         this.model.peliculas[$scope.Titulo] = nuevaPelicula;
+        alert("Película creada con éxito");
     }
     
 }
